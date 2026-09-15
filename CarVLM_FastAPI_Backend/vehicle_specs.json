@@ -1,0 +1,425 @@
+{
+  "chevrolet impala 2008": {
+    "make": "Chevrolet",
+    "model": "Impala",
+    "year": 2008,
+    "vehicle_type": "Full-size car",
+    "body_styles": [
+      "Sedan"
+    ],
+    "doors": [
+      4
+    ],
+    "seating_capacity": [
+      5,
+      6
+    ],
+    "engine_options": [
+      {
+        "engine": "3.5L V6",
+        "horsepower": 211
+      },
+      {
+        "engine": "3.9L V6",
+        "horsepower": 233
+      },
+      {
+        "engine": "5.3L V8",
+        "horsepower": 303
+      }
+    ],
+    "horsepower_range": "211-303 hp",
+    "transmissions": [
+      "4-speed automatic"
+    ],
+    "drivetrains": [
+      "Front-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline",
+      "E85/Flex Fuel on supported versions"
+    ]
+  },
+  "chevrolet silverado 2004": {
+    "make": "Chevrolet",
+    "model": "Silverado 1500",
+    "year": 2004,
+    "vehicle_type": "Full-size pickup truck",
+    "body_styles": [
+      "Regular Cab",
+      "Extended Cab",
+      "Crew Cab"
+    ],
+    "doors": [
+      2,
+      4
+    ],
+    "seating_capacity": [
+      3,
+      5,
+      6
+    ],
+    "engine_options": [
+      {
+        "engine": "4.3L V6",
+        "horsepower": 195
+      },
+      {
+        "engine": "4.8L V8",
+        "horsepower": 285
+      },
+      {
+        "engine": "5.3L V8",
+        "horsepower": 295
+      },
+      {
+        "engine": "6.0L V8",
+        "horsepower": 345
+      }
+    ],
+    "horsepower_range": "195-345 hp",
+    "transmissions": [
+      "5-speed manual",
+      "4-speed automatic"
+    ],
+    "drivetrains": [
+      "Rear-wheel drive",
+      "Four-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  },
+  "dodge ram 2001": {
+    "make": "Dodge",
+    "model": "Ram 1500",
+    "year": 2001,
+    "vehicle_type": "Full-size pickup truck",
+    "body_styles": [
+      "Regular Cab",
+      "Club Cab",
+      "Quad Cab"
+    ],
+    "doors": [
+      2,
+      4
+    ],
+    "seating_capacity": [
+      3,
+      6
+    ],
+    "engine_options": [
+      {
+        "engine": "3.9L V6",
+        "horsepower": 175
+      },
+      {
+        "engine": "5.2L V8",
+        "horsepower": 230
+      },
+      {
+        "engine": "5.9L V8",
+        "horsepower": 245
+      }
+    ],
+    "horsepower_range": "175-245 hp",
+    "transmissions": [
+      "5-speed manual",
+      "Automatic transmission"
+    ],
+    "drivetrains": [
+      "Rear-wheel drive",
+      "Four-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  },
+  "ford f150 2006": {
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2006,
+    "vehicle_type": "Full-size pickup truck",
+    "body_styles": [
+      "Regular Cab",
+      "SuperCab",
+      "SuperCrew"
+    ],
+    "doors": [
+      2,
+      4
+    ],
+    "seating_capacity": [
+      3,
+      5,
+      6
+    ],
+    "engine_options": [
+      {
+        "engine": "4.2L V6",
+        "horsepower": 202
+      },
+      {
+        "engine": "4.6L V8",
+        "horsepower": 231
+      },
+      {
+        "engine": "5.4L V8",
+        "horsepower": 300
+      }
+    ],
+    "horsepower_range": "202-300 hp",
+    "transmissions": [
+      "5-speed manual",
+      "4-speed automatic"
+    ],
+    "drivetrains": [
+      "Rear-wheel drive",
+      "Four-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  },
+  "gmc sierra 2012": {
+    "make": "GMC",
+    "model": "Sierra 1500",
+    "year": 2012,
+    "vehicle_type": "Full-size pickup truck",
+    "body_styles": [
+      "Regular Cab",
+      "Extended Cab",
+      "Crew Cab"
+    ],
+    "doors": [
+      2,
+      4
+    ],
+    "seating_capacity": [
+      3,
+      5,
+      6
+    ],
+    "engine_options": [
+      {
+        "engine": "4.3L V6",
+        "horsepower": 195
+      },
+      {
+        "engine": "4.8L V8",
+        "horsepower": 302
+      },
+      {
+        "engine": "5.3L V8",
+        "horsepower": 315
+      },
+      {
+        "engine": "6.2L V8",
+        "horsepower": 403
+      }
+    ],
+    "horsepower_range": "195-403 hp",
+    "transmissions": [
+      "4-speed automatic",
+      "6-speed automatic"
+    ],
+    "drivetrains": [
+      "Rear-wheel drive",
+      "Four-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline",
+      "Flex Fuel on selected V8 versions"
+    ]
+  },
+  "honda accord 1997": {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 1997,
+    "vehicle_type": "Midsize car",
+    "body_styles": [
+      "Sedan",
+      "Coupe",
+      "Wagon"
+    ],
+    "doors": [
+      2,
+      4
+    ],
+    "seating_capacity": [
+      5
+    ],
+    "engine_options": [
+      {
+        "engine": "2.2L Inline-4",
+        "horsepower": 130
+      },
+      {
+        "engine": "2.2L VTEC Inline-4",
+        "horsepower": 145
+      },
+      {
+        "engine": "2.7L V6",
+        "horsepower": 170
+      }
+    ],
+    "horsepower_range": "130-170 hp",
+    "transmissions": [
+      "5-speed manual",
+      "4-speed automatic"
+    ],
+    "drivetrains": [
+      "Front-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  },
+  "honda civic 1998": {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 1998,
+    "vehicle_type": "Compact car",
+    "body_styles": [
+      "Sedan",
+      "Coupe",
+      "Hatchback"
+    ],
+    "doors": [
+      2,
+      3,
+      4
+    ],
+    "seating_capacity": [
+      5
+    ],
+    "engine_options": [
+      {
+        "engine": "1.6L Inline-4",
+        "horsepower": 106
+      },
+      {
+        "engine": "1.6L Inline-4",
+        "horsepower": 115
+      },
+      {
+        "engine": "1.6L VTEC Inline-4",
+        "horsepower": 127
+      }
+    ],
+    "horsepower_range": "106-127 hp",
+    "transmissions": [
+      "5-speed manual",
+      "4-speed automatic",
+      "CVT on selected HX versions"
+    ],
+    "drivetrains": [
+      "Front-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  },
+  "nissan altima 2014": {
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2014,
+    "vehicle_type": "Midsize car",
+    "body_styles": [
+      "Sedan"
+    ],
+    "doors": [
+      4
+    ],
+    "seating_capacity": [
+      5
+    ],
+    "engine_options": [
+      {
+        "engine": "2.5L Inline-4",
+        "horsepower": 182
+      },
+      {
+        "engine": "3.5L V6",
+        "horsepower": 270
+      }
+    ],
+    "horsepower_range": "182-270 hp",
+    "transmissions": [
+      "CVT"
+    ],
+    "drivetrains": [
+      "Front-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  },
+  "toyota camry 2014": {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2014,
+    "vehicle_type": "Midsize car",
+    "body_styles": [
+      "Sedan"
+    ],
+    "doors": [
+      4
+    ],
+    "seating_capacity": [
+      5
+    ],
+    "engine_options": [
+      {
+        "engine": "2.5L Inline-4",
+        "horsepower": 178
+      },
+      {
+        "engine": "3.5L V6",
+        "horsepower": 268
+      }
+    ],
+    "horsepower_range": "178-268 hp",
+    "transmissions": [
+      "6-speed automatic"
+    ],
+    "drivetrains": [
+      "Front-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  },
+  "toyota corolla 2013": {
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2013,
+    "vehicle_type": "Compact car",
+    "body_styles": [
+      "Sedan"
+    ],
+    "doors": [
+      4
+    ],
+    "seating_capacity": [
+      5
+    ],
+    "engine_options": [
+      {
+        "engine": "1.8L Inline-4",
+        "horsepower": 132
+      }
+    ],
+    "horsepower_range": "132 hp",
+    "transmissions": [
+      "5-speed manual",
+      "4-speed automatic"
+    ],
+    "drivetrains": [
+      "Front-wheel drive"
+    ],
+    "fuel_types": [
+      "Gasoline"
+    ]
+  }
+}

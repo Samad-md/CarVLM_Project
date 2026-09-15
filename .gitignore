@@ -1,0 +1,21 @@
+# Python
+CarVLM_FastAPI_Backend/.venv/
+CarVLM_FastAPI_Backend/__pycache__/
+CarVLM_FastAPI_Backend/**/*.pyc
+
+# Large trained model
+CarVLM_FastAPI_Backend/model/
+
+# React / Node
+CarVLM_Frontend/node_modules/
+CarVLM_Frontend/dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# VS Code / Windows
+.vscode/
+.DS_Store
+Thumbs.db
