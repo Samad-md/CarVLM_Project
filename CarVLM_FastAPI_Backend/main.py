@@ -1,6 +1,5 @@
 import os
 import asyncio
-from functools import lru_cache
 from pathlib import Path
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
@@ -11,9 +10,11 @@ from inference import CarVLMPredictor
 
 BASE = Path(__file__).resolve().parent
 
+
 MODEL_DIR = Path(
     os.getenv("CARVLM_MODEL_DIR", BASE / "model")
 )
+
 
 SPECS_PATH = Path(
     os.getenv("CARVLM_SPECS_PATH", BASE / "vehicle_specs.json")
@@ -35,19 +36,34 @@ app.add_middleware(
 )
 
 
-@lru_cache(maxsize=1)
-def predictor():
+# Global model holder
+MODEL = None
+
+
+
+@app.on_event("startup")
+def startup_event():
+
+    global MODEL
+
+    print("================================")
     print("Loading CarVLM model...")
-    model = CarVLMPredictor(
+    print("================================")
+
+    MODEL = CarVLMPredictor(
         MODEL_DIR,
         SPECS_PATH
     )
-    print("Model loaded successfully")
-    return model
+
+    print("================================")
+    print("CarVLM model loaded successfully")
+    print("================================")
+
 
 
 @app.get("/")
 def root():
+
     return {
         "name": "CarVLM API",
         "docs": "/docs",
@@ -55,58 +71,74 @@ def root():
     }
 
 
+
 @app.get("/health")
 def health():
+
     return {
         "status": "ok",
-        "service": "CarVLM API"
+        "service": "CarVLM API",
+        "model_loaded": MODEL is not None
     }
+
 
 
 @app.get("/classes")
 def classes():
-    try:
-        p = predictor()
 
-        return {
-            "count": len(p.labels),
-            "classes": p.labels
-        }
-
-    except Exception as e:
+    if MODEL is None:
         raise HTTPException(
             status_code=503,
-            detail=str(e)
+            detail="Model loading"
         )
+
+    return {
+        "count": len(MODEL.labels),
+        "classes": MODEL.labels
+    }
+
 
 
 @app.post("/predict")
-async def predict(file: UploadFile = File(...)):
+async def predict(
+    file: UploadFile = File(...)
+):
+
+    if MODEL is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Model not ready"
+        )
+
 
     data = await file.read()
+
 
     if not data:
         raise HTTPException(
             status_code=400,
-            detail="Empty file."
+            detail="Empty file"
         )
 
 
     if len(data) > 15 * 1024 * 1024:
+
         raise HTTPException(
             status_code=413,
-            detail="Maximum image size is 15 MB."
+            detail="Maximum image size is 15MB"
         )
 
 
     try:
 
         result = await asyncio.to_thread(
-            predictor().predict,
+            MODEL.predict,
             data
         )
 
+
         result["filename"] = file.filename
+
 
         return result
 
@@ -115,5 +147,5 @@ async def predict(file: UploadFile = File(...)):
 
         raise HTTPException(
             status_code=500,
-            detail=f"Prediction failed: {e}"
+            detail=f"Prediction failed: {str(e)}"
         )
