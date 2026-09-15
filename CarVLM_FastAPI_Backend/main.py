@@ -1,4 +1,5 @@
 import os
+import asyncio
 from functools import lru_cache
 from pathlib import Path
 
@@ -27,10 +28,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://carvlmproject-production.up.railway.app"
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -39,10 +37,13 @@ app.add_middleware(
 
 @lru_cache(maxsize=1)
 def predictor():
-    return CarVLMPredictor(
+    print("Loading CarVLM model...")
+    model = CarVLMPredictor(
         MODEL_DIR,
         SPECS_PATH
     )
+    print("Model loaded successfully")
+    return model
 
 
 @app.get("/")
@@ -54,8 +55,6 @@ def root():
     }
 
 
-# Railway health check
-# Do NOT load 1.45GB model here
 @app.get("/health")
 def health():
     return {
@@ -82,9 +81,7 @@ def classes():
 
 
 @app.post("/predict")
-async def predict(
-    file: UploadFile = File(...)
-):
+async def predict(file: UploadFile = File(...)):
 
     data = await file.read()
 
@@ -104,7 +101,10 @@ async def predict(
 
     try:
 
-        result = predictor().predict(data)
+        result = await asyncio.to_thread(
+            predictor().predict,
+            data
+        )
 
         result["filename"] = file.filename
 
